@@ -1,0 +1,196 @@
+@use "../mixins" as *;
+@use "../variables" as *;
+
+.hero {
+    padding-top: 280px;
+    padding-bottom: 140px;
+    background-image: url(../images/herobg.svg);
+    background-repeat: no-repeat;
+    background-size: 500px 220px;
+    background-position: calc(50% + 102px) calc(50% - 220px);
+}
+
+.hero__title {
+    color: $main-title-color;
+    text-align: center;
+    font-size: 24px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 40px; /* 133.333% */
+    letter-spacing: -0.094px;
+    margin-top: 0;
+    margin-bottom: 16px;
+}
+
+.hero__text {
+    color: $main-title-color;
+    text-align: center;
+    font-family: Rubik;
+    font-size: 11px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 25px; /* 166.667% */
+    opacity: 0.5;
+    margin-top: 0;
+    margin-bottom: 32px;
+}
+
+.hero__small-box {
+    @include flexbox($direction: null);
+}
+
+.hero__link {
+    @include links;
+    color: #fff;
+    border-radius: 5px;
+    background-color: $main-link-bg;
+    padding: 8px 10px;
+    box-shadow: 0px 8px 8px -4px rgba(73, 93, 207, 0.2);
+    border: 2px solid $main-link-bg;
+    text-align: center;
+    font-size: 10px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 28px; /* 200% */
+    letter-spacing: 0.25px;
+    transition: color 0.4s linear, background-color 0.4s linear,
+        border 0.4s linear;
+}
+
+.hero__link:hover {
+    color: $main-link-bg;
+    background-color: #fff;
+    border: 2px solid $main-link-bg;
+}
+
+.hero__fire-link {
+    @include links;
+    color: $main-title-color;
+    padding: 8px 10px;
+    border-radius: 5px;
+    background-color: #f7f7f7;
+    border: 2px solid #f7f7f7;
+    box-shadow: 0px 8px 8px -4px rgba(73, 93, 207, 0.2);
+    opacity: 0.75;
+    text-align: center;
+    font-size: 10px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 28px; /* 200% */
+    letter-spacing: 0.25px;
+    transition: background-color 0.4s linear, border 0.4s linear;
+}
+
+.hero__fire-link:hover {
+    border: 2px solid #5b6074;
+    background-color: #fff;
+}
+
+@media only screen and (min-width: 360px) {
+    .hero {
+        padding-top: 343px;
+        background-size: auto;
+        background-position: calc(50% + 134px) calc(50% - 210px);
+    }
+
+    .hero__title {
+        font-size: 30px;
+    }
+
+    .hero__text {
+        font-size: 15px;
+    }
+
+    .hero__link {
+        font-size: 14px;
+        padding: 10px 16px;
+    }
+
+    .hero__fire-link {
+        font-size: 14px;
+        padding: 10px 17px;
+    }
+}
+
+@media only screen and (min-width: 500px) {
+    .hero__small-box {
+        justify-content: space-around;
+    }
+
+    .hero__title {
+        font-size: 34px;
+    }
+
+    .hero__text {
+        font-size: 21px;
+    }
+}
+
+@media only screen and (min-width: 724px) {
+    .hero {
+        padding-top: 131px;
+        padding-bottom: 203px;
+        background-position: calc(50% + 328px) calc(50% - 80px);
+    }
+
+    .hero__box {
+        max-width: 418px;
+    }
+
+    .hero__title {
+        font-size: 42px;
+        text-align: left;
+        margin-bottom: 24px;
+    }
+
+    .hero__text {
+        font-size: 14px;
+        text-align: left;
+    }
+
+    .hero__small-box {
+        justify-content: flex-start;
+        column-gap: 16px;
+    }
+}
+
+@media only screen and (min-width: 950px) {
+    .hero {
+        padding-top: 131px;
+        padding-bottom: 203px;
+        background-position: calc(50% + 418px) calc(50% - 80px);
+    }
+
+    .hero__box {
+        max-width: 540px;
+    }
+
+    .hero__title {
+        font-size: 48px;
+        font-style: normal;
+        font-weight: 500;
+        line-height: 52px; /* 108.333% */
+        letter-spacing: -0.15px;
+        text-align: left;
+        margin-bottom: 24px;
+    }
+
+    .hero__text {
+        font-size: 18px;
+        text-align: left;
+    }
+}
+
+@media only screen and (min-width: 1150px) {
+    .hero {
+        background-image: url(../images/herodisktop.svg);
+        background-position: calc(50% + 550px) calc(50% - 30px);
+    }
+}
+
+@media only screen and (min-width: 1250px) {
+    .hero {
+        background-image: url(../images/herodisktop.svg);
+        background-position: calc(50% + 600px) calc(50% - 30px);
+    }
+}

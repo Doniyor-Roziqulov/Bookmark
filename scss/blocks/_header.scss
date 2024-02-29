@@ -1,0 +1,249 @@
+@use "../mixins" as *;
+@use "../variables" as *;
+
+.unscrollbody {
+    overflow: hidden;
+}
+
+.open-menu .navbar-menu {
+    display: block;
+}
+
+.open-menu .site-header__btn {
+    background-image: url(../images/humburgcloase.svg);
+}
+
+.open-menu .logo {
+    display: none;
+}
+
+.open-menu .header-logo {
+    display: block;
+}
+
+.open-menu {
+    background-color: $main-title-color;
+    opacity: 0.95;
+    backdrop-filter: blur(16.309690475463867px);
+}
+
+.header-logo {
+    display: none;
+}
+
+.site-header {
+    padding-top: 40px;
+    padding-bottom: 40px;
+}
+
+.site-header__box {
+    @include flexbox($direction: null);
+}
+
+.site-header__btn {
+    @include btn;
+    width: 18px;
+    height: 15px;
+    background-image: url(../images/humburg.svg);
+    background-repeat: no-repeat;
+    background-position: center;
+    padding: 0;
+    cursor: pointer;
+}
+
+.navbar-menu {
+    display: none;
+    background-color: $main-title-color;
+    position: absolute;
+    top: 105px;
+    left: 0;
+    z-index: 4;
+    width: 100vw;
+    height: 100vh;
+}
+
+.site-header__list {
+    @include flexbox($justifay: null);
+}
+
+.site-header__list {
+    @include lists;
+}
+
+.site-header__item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-bottom: 24px;
+    position: relative;
+}
+
+.site-header__item::before {
+    display: block;
+    content: "";
+    width: 200px;
+    height: 1px;
+    opacity: 0.15;
+    background-color: #fff;
+    margin-bottom: 18px;
+}
+
+.site-header__item--two::after {
+    display: block;
+    content: "";
+    width: 200px;
+    height: 1px;
+    opacity: 0.15;
+    background-color: #fff;
+    margin-top: 18px;
+}
+
+.site-header__link {
+    @include links;
+    color: #fff;
+    text-align: center;
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 17px; /* 85% */
+    letter-spacing: 2.308px;
+    text-transform: uppercase;
+}
+
+.site-header__login {
+    @include links;
+    color: #fff;
+    border-radius: 5px;
+    border: 2px solid #fff;
+    margin-bottom: 140px;
+    padding: 13px 65px 12px;
+    text-align: right;
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 17px; /* 85% */
+    letter-spacing: 2.308px;
+}
+
+.site-header__iconlist {
+    @include lists;
+    @include flexbox($direction: null, $justifay: null);
+    column-gap: 40px;
+}
+
+.site-header__inner {
+    @include flexbox($justifay: null);
+}
+
+@media only screen and (min-width: 375px) {
+    .site-header__item::before {
+        width: 309px;
+        margin-bottom: 24px;
+    }
+
+    .site-header__item--two::after {
+        width: 309px;
+        margin-top: 24px;
+    }
+
+    .site-header__login {
+        margin-bottom: 219px;
+        padding: 13px 118px 12px;
+    }
+}
+
+@media only screen and (min-width: 600px) {
+    .site-header {
+        padding-top: 48px;
+        padding-bottom: 48px;
+    }
+
+    .site-header__btn {
+        display: none;
+    }
+
+    .site-header__box {
+        align-items: center;
+        justify-content: space-between;
+    }
+
+    .navbar-menu {
+        display: block;
+        position: static;
+        background-color: transparent;
+        width: auto;
+        height: auto;
+    }
+
+    .site-header__iconlist {
+        display: none;
+    }
+
+    .site-header__inner {
+        flex-direction: row;
+    }
+
+    .site-header__list {
+        flex-direction: row;
+        column-gap: 20px;
+    }
+
+    .site-header__link {
+        color: $main-title-color;
+        text-align: right;
+        font-size: 13px;
+        font-style: normal;
+        font-weight: 400;
+        line-height: 17px; /* 130.769% */
+        letter-spacing: 1.5px;
+        @include transitions;
+    }
+
+    .site-header__link:hover {
+        color: $main-link-btn;
+    }
+
+    .site-header__item {
+        padding-bottom: 0;
+    }
+
+    .site-header__item::before {
+        display: none;
+    }
+
+    .site-header__item--two::after {
+        display: none;
+    }
+    .site-header__login {
+        color: #fff;
+        text-align: right;
+        border-radius: 5px;
+        background-color: $main-link-btn;
+        box-shadow: 0px 8px 8px -4px rgba(73, 93, 207, 0.2);
+        font-size: 13px;
+        font-style: normal;
+        font-weight: 500;
+        line-height: 17px; /* 130.769% */
+        letter-spacing: 1.5px;
+        margin-bottom: 0;
+        margin-left: 15px;
+        padding: 12px 32px 11px 34px;
+        transition: color 0.4s linear, background-color 0.4s linear;
+    }
+
+    .site-header__login:hover {
+        color: $main-link-btn;
+        background-color: #fff;
+        border: 2px solid $main-link-btn;
+    }
+}
+
+@media only screen and (min-width: 750px) {
+    .site-header__list {
+        column-gap: 44px;
+    }
+
+    .site-header__login {
+        margin-left: 48px;
+    }
+}

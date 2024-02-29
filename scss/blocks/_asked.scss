@@ -1,0 +1,140 @@
+@use "../variables" as *;
+@use "../mixins" as *;
+
+.asked {
+    padding-bottom: 123px;
+}
+
+.asked__title {
+    color: $main-title-color;
+    text-align: center;
+    font-size: 24px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 30px; /* 125% */
+    letter-spacing: -0.075px;
+    margin-top: 0;
+    margin-bottom: 16px;
+}
+
+.asked__text {
+    color: $main-title-color;
+    text-align: center;
+    font-size: 15px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 25px; /* 166.667% */
+    opacity: 0.5;
+    margin-top: 0;
+    margin-bottom: 64px;
+}
+
+.asked__bold {
+    display: inline-block;
+    color: $main-title-color;
+    font-size: 10px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 32px; /* 213.333% */
+    margin-top: 12px;
+    margin-bottom: 12px;
+    transition: color 0.4s linear;
+}
+
+.asked__bold:hover {
+    color: $main-link-btn;
+}
+
+details[open] .asked__summary::after {
+    background-image: url(../images/top.svg);
+}
+
+.asked__desc {
+    color: $main-title-color;
+    font-size: 10px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 30px; /* 200% */
+    letter-spacing: 0.141px;
+    opacity: 0.75;
+    margin-top: 0;
+    margin-bottom: 0;
+}
+
+.asked__summary {
+    list-style: none;
+    position: relative;
+}
+
+.asked__summary::after {
+    content: "";
+    width: 20px;
+    height: 14px;
+    background-image: url(../images/bottom.svg);
+    position: absolute;
+    top: 20px;
+    right: 0;
+}
+
+.asked__details {
+    position: relative;
+}
+
+.asked__details::after {
+    content: "";
+    width: 100%;
+    height: 1px;
+    background-color: $main-title-color;
+    opacity: 0.1477;
+    position: absolute;
+}
+
+.asked__link-box {
+    display: flex;
+    justify-content: center;
+}
+
+.asked__link {
+    display: inline-block;
+    text-decoration-line: none;
+    color: #fff;
+    border-radius: 5px;
+    background-color: #5267df;
+    box-shadow: 0px 8px 8px -4px rgba(73, 93, 207, 0.2);
+    font-size: 14px;
+    font-style: normal;
+    margin: 48px auto 0;
+    padding: 10px 24px;
+    font-weight: 500;
+    line-height: 28px; /* 200% */
+    letter-spacing: 0.25px;
+}
+
+@media only screen and (min-width: 370px) {
+    .asked__bold {
+        font-size: 15px;
+    }
+}
+
+@media only screen and (min-width: 600px) {
+    .asked__bold {
+        font-size: 18px;
+    }
+
+    .asked__title {
+        font-size: 32px;
+    }
+
+    .asked__text {
+        font-size: 18px;
+    }
+
+    .asked__big-box {
+        max-width: 540px;
+        margin: 0 auto;
+    }
+
+    .asked__desc {
+        font-size: 16px;
+    }
+}

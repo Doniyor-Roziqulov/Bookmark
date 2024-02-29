@@ -1,0 +1,145 @@
+@use "../variables" as *;
+@use "../mixins" as *;
+
+.features {
+    padding-bottom: 72px;
+}
+
+.features__title {
+    color: $main-title-color;
+    text-align: center;
+    font-size: 24px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 52px; /* 216.667% */
+    letter-spacing: -0.075px;
+    margin-top: 0;
+    margin-bottom: 0;
+}
+
+.features__text {
+    color: $main-title-color;
+    text-align: center;
+    font-size: 10px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 25px; /* 166.667% */
+    opacity: 0.5;
+    margin-top: 0;
+    margin-bottom: 40px;
+}
+
+.features__list {
+    @include lists;
+    @include flexbox($justifay: null);
+}
+
+.features__item {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    // padding-bottom: 20px;
+}
+
+.features__item::before {
+    display: block;
+    content: "";
+    width: 200px;
+    height: 1px;
+    background-color: rgba(73, 93, 207, 0.2);
+    margin-bottom: 20px;
+}
+
+.features__item:last-child {
+    padding-bottom: 0;
+}
+
+.features__item:last-child::after {
+    display: block;
+    content: "";
+    width: 200px;
+    height: 1px;
+    background-color: rgba(73, 93, 207, 0.2);
+    // margin-top: 20px;
+}
+
+.features__link {
+    @include links;
+    color: $main-title-color;
+    text-align: center;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 17px; /* 106.25% */
+    letter-spacing: 0.533px;
+    opacity: 0.75;
+    @include transitions;
+    padding-bottom: 16px;
+    border-bottom: 4px solid #fff;
+}
+
+.features__link:hover {
+    color: $main-link-btn;
+}
+
+.features__link:active {
+    opacity: 1;
+    color: $main-title-color;
+    border-bottom: 4px solid $main-link-btn;
+}
+
+@media only screen and (min-width: 370px) {
+    .features__text {
+        font-size: 15px;
+    }
+}
+
+@media only screen and (min-width: 550px) {
+    .features__title {
+        font-size: 40px;
+    }
+
+    .features__text {
+        font-size: 22px;
+    }
+
+    .features__link {
+        font-size: 20px;
+    }
+}
+
+@media only screen and (min-width: 600px) {
+    .features__small-box {
+        max-width: 540px;
+        margin: 0 auto;
+    }
+
+    .features__list {
+        max-width: 730px;
+        @include flexbox($direction: row, $justifay:space-around);
+        border-bottom: 1px solid rgba(73, 93, 207, 0.2);
+        margin: 0 auto;
+    }
+
+    .features__item::before {
+        display: none;
+    }
+
+    .features__title {
+        font-size: 32px;
+        margin-bottom: 16px;
+    }
+
+    .features__text {
+        font-size: 18px;
+        margin-bottom: 72px;
+    }
+
+    .features__link {
+        font-size: 16px;
+    }
+
+    .features__item:last-child::after {
+        display: none;
+    }
+}
